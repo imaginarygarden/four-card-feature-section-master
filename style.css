@@ -1,0 +1,197 @@
+/* General Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Font Imports */
+@font-face {
+    font-family: "Poppins";
+    font-weight: 200;
+    src: url(fonts/poppins-v21-latin-200.woff2) format("woff2");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 400;
+    src: url(fonts/poppins-v21-latin-regular.woff2) format("woff2");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 600;
+    src: url(fonts/poppins-v21-latin-600.woff2) format("woff2");
+}
+
+/* Body Styling */
+body {
+    background: hsl(0, 0%, 98%);
+    min-height: 100vh;
+    font-family: "Poppins";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+header {
+    text-align: center;
+    color: hsl(234, 12%, 34%);
+}
+
+.site-phrase {
+    font-size: 2.375rem;
+    font-weight: 200;
+}
+
+.site-header {
+    margin-top: 2rem;
+    font-size: 2.375rem;
+}
+
+.site-description {
+    margin-top: 2rem;
+    max-width: 35rem;
+    color: hsl(229, 6%, 66%);
+}
+
+/* Main Layout */
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 5rem 5rem;
+}
+
+/* Blocks */
+.block1, .block2, .block3, .block4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 16rem;
+    max-width: 23rem;
+    border-radius: 0.5rem;
+    background: white;
+    box-shadow: 0px 3px 25px -10px hsl(229, 6%, 66%);
+}
+
+.block1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    align-self: center;
+}
+
+.block2 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.block3 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.block4 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    align-self: center;
+}
+
+.block-header {
+    margin-top: 2.5rem;
+    color: hsl(234, 12%, 34%);
+    padding: 0 2rem;
+}
+
+.block-description {
+    margin-top: 1rem;
+    padding: 0 2rem;
+    color: hsl(229, 6%, 66%);
+    font-size: 0.938rem;
+}
+
+.block-icon {
+    max-width: fit-content;
+    align-self: flex-end;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+}
+
+/* Block-Specific Borders */
+.block1 hr {
+    border: 0.125rem solid hsl(180, 62%, 55%);
+}
+
+.block2 hr {
+    border: 0.125rem solid hsl(0, 78%, 62%);
+}
+
+.block3 hr {
+    border: 0.125rem solid hsl(34, 97%, 64%);
+}
+
+.block4 hr {
+    border: 0.125rem solid hsl(212, 86%, 64%);
+}
+
+hr {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* Media Queries */
+@media (max-width: 60em) {
+    header {
+        margin: 5rem 3rem;
+    }
+
+    .site-phrase {
+        font-size: 1.75rem;
+        text-wrap: nowrap;
+    }
+
+    .site-header {
+        margin-top: 1rem;
+        font-size: 1.75rem;
+        text-wrap: nowrap;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        margin: 0;
+        margin-bottom: 5rem;
+    }
+
+    .block1, .block2, .block3, .block4 {
+        grid-column-start: 1;
+        min-width: 70vw;
+    }
+
+    .block1 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .block2 {
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .block3 {
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    .block4 {
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+}
